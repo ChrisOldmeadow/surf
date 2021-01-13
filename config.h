@@ -127,19 +127,6 @@ static SiteSpecific certs[] = {
 	{ "://suckless\\.org/", "suckless.org.crt" },
 };
 
-
-
-#define BM_PICK { .v = (char *[]){ "/bin/sh", "-c", \
-"xprop -id $0 -f _SURF_GO 8s -set _SURF_GO \
-`cat ~/.surf/bookmarks | dmenu || exit 0`", \
-winid, NULL } }
-#define BM_ADD { .v = (char *[]){ "/bin/sh", "-c", \
-"(echo `xprop -id $0 _SURF_URI | cut -d '\"' -f 2` && \
-cat ~/.surf/bookmarks) | sort -u > ~/.surf/bookmarks_new && \
-mv ~/.surf/bookmarks_new ~/.surf/bookmarks", \
-winid, NULL } }
-
-
 #define MODKEY GDK_CONTROL_MASK
 
 /* hotkeys */
@@ -189,12 +176,6 @@ static Key keys[] = {
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_a,      togglecookiepolicy, { 0 } },
 	{ 0,                     GDK_KEY_F11,    togglefullscreen, { 0 } },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_o,      toggleinspector, { 0 } },
-
-        /* Bookmarks */
-        { MODKEY,               GDK_b,      spawn,      BM_PICK },
-        { MODKEY|GDK_SHIFT_MASK,GDK_b,      spawn,      BM_ADD },
-
-
 
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_c,      toggle,     { .i = CaretBrowsing } },
 	{ MODKEY|GDK_SHIFT_MASK, GDK_KEY_f,      toggle,     { .i = FrameFlattening } },
