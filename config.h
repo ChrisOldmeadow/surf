@@ -127,7 +127,7 @@ static WebKitFindOptions findopts = WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE |
  */
 static SiteSpecific styles[] = {
 	/* regexp               file in $styledir */
-	{ ".*",                 "darculized-all-sites.css" },
+	{ ".*",                 "solarized-dark-all-sites.css" },
 };
 
 /* certificates */
